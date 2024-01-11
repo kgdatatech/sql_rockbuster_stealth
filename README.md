@@ -14,7 +14,7 @@ The Rockbuster Stealth Management Board seeks answers to critical questions, suc
 5.  Do sales figures vary between geographic regions?
 
 ## Context
-Using SQL, I've thoroughly answered these questions and visualized the results for effective communication with Rockbuster management. This project offers hands-on experience in SQL, applicable across industries.
+Using SQL, I've thoroughly answered these questions and visualized the results for effective communication with Rockbuster management via MS Excel and Tableau. This project offers hands-on experience in SQL, applicable across industries.
 
 ## Data and Tools
 The project utilizes a 3MB data set containing information about Rockbuster’s film inventory, customers, and payments. Establishing relationships between tables, I've loaded this data into a PostgreSQL database to perform query-based analyses.
