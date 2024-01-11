@@ -1,4 +1,4 @@
-Full Syntax of Data cleaning from PostgreSQL:
+Full Syntax of Data Cleaning Process from PostgreSQL:
 
 ## Cleaning the data for FILM and CUSTOMER  tables.
 
@@ -7,18 +7,13 @@ SELECT * FROM film
 SELECT * FROM customer
 ----------------------------------------------------------------------------
 
---[FILM TABLE]
+[FILM TABLE]
 
 --Find non-uniform data using DISTINCT 
 SELECT DISTINCT film_id, title, description, release_year, language_id, 
                                rental_duration, rental_rate, length, replacement_cost,
                                rating, last_update, special_features, fulltext
 FROM film;
-
-
-
-
-
 
 --Shows only those records that duplicate (based on all columns from [film table])
 SELECT film_id, title, description, release_year, language_id,
@@ -71,8 +66,6 @@ SELECT *
 FROM film
 WHERE length IS NULL;
 
-
-
 --Check for missing values in the replacement_cost column
 SELECT * 
 FROM film
@@ -99,8 +92,7 @@ FROM film
 WHERE fulltext IS NULL;
 ----------------------------------------------------------------------------
 
-
---[CUSTOMER TABLE]
+[CUSTOMER TABLE]
 
 --Find non-uniform data(based on all columns from [customer table])
 SELECT DISTINCT customer_id, store_id, first_name, last_name, email, 
@@ -123,9 +115,6 @@ WHERE customer_id IS NULL;
 SELECT *
 FROM customer
 WHERE store_id IS NULL;
-
-
-
 
 --Check for missing values in the first_name column
 SELECT *
@@ -152,8 +141,6 @@ SELECT *
 FROM customer
 WHERE activebool IS NULL;
 
-
-
 --Check for missing values in the create_date column
 SELECT *
 FROM customer
@@ -169,3 +156,19 @@ SELECT *
 FROM customer
 WHERE active IS NULL;
 ----------------------------------------------------------------------------
+
+[CATEGORY TABLE]
+
+--Identify missing genres (subquery)
+
+SELECT name AS genre_not_included
+FROM Category
+WHERE category_id NOT IN 
+   (SELECT F.category_id
+    FROM Payment A
+    JOIN Rental B ON A.rental_id = B.rental_id
+    JOIN Inventory C ON B.inventory_id = C.inventory_id
+    JOIN Film D ON C.film_id = D.film_id
+    JOIN Film_Category E ON D.film_id = E.film_id
+    JOIN Category F ON E.category_id = F.category_id
+    GROUP BY F.category_id)
