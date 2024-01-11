@@ -19,7 +19,10 @@ Using SQL, I've thoroughly answered these questions and visualized the results f
 ## Data and Tools
 The project utilizes a 3MB data set containing information about Rockbuster’s film inventory, customers, and payments. Establishing relationships between tables, I've loaded this data into a PostgreSQL database to perform query-based analyses.
 
-### Dataset Citation
-- [Download Rockbuster Data Set](https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip)
+### CareerFoundry Dataset
+- [Download CF Rockbuster Data Set](https://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip)
 
 Note: The project is a simulated exercise, and data details are fabricated for achievement purposes.
+
+### Data Presentation
+- [Rockbuster Stealth Tableau Workbook](https://public.tableau.com/app/profile/keanu.g7625/viz/RockbusterStealthe_g_ProjectSummary/geo_reach_top_5_cst)
