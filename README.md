@@ -28,4 +28,4 @@ Note: The project is a simulated exercise, and data details are fabricated for a
 - [Rockbuster Stealth Tableau Workbook](https://public.tableau.com/app/profile/keanu.g7625/viz/RockbusterStealthe_g_ProjectSummary/geo_reach_top_5_cst)
 
 
-- Note: Instacart is a real company that’s made their data available online. However, the contents of this project brief have been fabricated for the purpose of this Achievement.
+- Note: Rockbuster Stealth LLC and the datasets of this project brief have been fabricated for educational purposes only. The project is a simulated exercise.
