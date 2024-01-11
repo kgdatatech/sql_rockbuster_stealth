@@ -1,0 +1,23 @@
+## Summarizing the Data [CUSTOMER TABLE]
+
+-- Calculate mode for non-numerical [customer table] columns.
+
+SELECT
+  MODE() WITHIN GROUP (ORDER BY store_id) AS mode_store_id,
+  MODE() WITHIN GROUP (ORDER BY first_name) AS mode_first_name,
+  MODE() WITHIN GROUP (ORDER BY last_name) AS mode_last_name,
+  MODE() WITHIN GROUP (ORDER BY email) AS mode_email,
+  MODE() WITHIN GROUP (ORDER BY address_id) AS mode_address_id,
+  MODE() WITHIN GROUP (ORDER BY activebool) AS mode_active_customer,
+  MODE() WITHIN GROUP (ORDER BY create_date) AS mode_create_date
+FROM customer
+ORDER BY 
+HAVING COUNT(*) >1;
+-------------------------------------------------------
+
+--Can also be used to find (modal value) of first names.
+
+SELECT first_name, COUNT(*) AS mode_first_name
+FROM customer
+GROUP BY first_name
+HAVING COUNT(*) > 1;
