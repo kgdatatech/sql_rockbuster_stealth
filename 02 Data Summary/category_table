@@ -1,0 +1,3 @@
+--Count total genres
+SELECT COUNT(*) AS total_genre_count
+FROM Category;
