@@ -1,0 +1,24 @@
+--Which movies contributed the most/least to revenue gain? (INNER JOIN, GROUP BY, ORDER BY)
+
+SELECT D.film_id, D.title AS film_title, SUM(A.amount) AS total_revenue
+FROM payment A
+INNER JOIN rental B ON A.rental_id = B.rental_id
+INNER JOIN inventory C ON B.inventory_id = C.inventory_id
+INNER JOIN film D ON C.film_id = D.film_id
+GROUP BY D.film_id
+ORDER BY total_revenue ASC
+LIMIT 5;
+-----------------------------------------------------------
+
+--Total revenue by genre (top/bottom ten using DESC or ASC)
+
+SELECT F.name AS genre,
+       SUM(A.amount) AS total_revenue
+FROM Payment A
+JOIN Rental B ON A.rental_id = B.rental_id
+JOIN Inventory C ON B.inventory_id = C.inventory_id
+JOIN Film D ON C.film_id = D.film_id
+JOIN Film_Category E ON D.film_id = E.film_id
+JOIN Category F ON E.category_id = F.category_id
+GROUP BY F.name
+ORDER BY total_revenue DESC;
