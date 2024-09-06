@@ -11,8 +11,6 @@ SELECT
   MODE() WITHIN GROUP (ORDER BY activebool) AS mode_active_customer,
   MODE() WITHIN GROUP (ORDER BY create_date) AS mode_create_date
 FROM customer
-ORDER BY 
-HAVING COUNT(*) >1;
 -------------------------------------------------------
 
 --Can also be used to find (modal value) of first names.
